@@ -26,6 +26,7 @@ mod table_property;
 mod table_row_property;
 mod table_width;
 mod underline;
+mod vertical_alignment;
 
 // re-export
 pub use self::{
@@ -33,5 +34,5 @@ pub use self::{
     italics::*, justification::*, numbering_id::*, numbering_property::*, outline::*,
     paragraph_property::*, size::*, strike::*, table_borders::*, table_cell_property::*,
     table_indent::*, table_justification::*, table_property::*, table_row_property::*,
-    table_width::*, underline::*,
+    table_width::*, underline::*, vertical_alignment::*,
 };

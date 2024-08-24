@@ -6,6 +6,8 @@ use crate::{
     formatting::{Bold, Color, Dstrike, Italics, Outline, Size, Strike, Underline},
 };
 
+use super::VerticalAlignment;
+
 /// Character Property
 ///
 /// ```rust
@@ -56,6 +58,8 @@ pub struct CharacterProperty<'a> {
     /// Specifies that the content should be displayed with an underline
     #[xml(child = "w:u")]
     pub underline: Option<Underline<'a>>,
+    #[xml(child = "w:vertAlign")]
+    pub vertical_alignment: Option<VerticalAlignment>,
 }
 
 impl<'a> CharacterProperty<'a> {
@@ -68,6 +72,7 @@ impl<'a> CharacterProperty<'a> {
     __setter!(strike: Option<Strike>);
     __setter!(size: Option<Size>);
     __setter!(underline: Option<Underline<'a>>);
+    __setter!(vertical_alignment: Option<VerticalAlignment>);
 }
 
 #[derive(Debug, XmlRead, XmlWrite)]
