@@ -10,7 +10,7 @@ use crate::__xml_test_suites;
 /// let strike = Strike::from(false);
 /// let strike = Strike::from(true);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:strike")]
 pub struct Strike {

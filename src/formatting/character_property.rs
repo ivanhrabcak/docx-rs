@@ -27,7 +27,7 @@ use super::VerticalAlignment;
 ///     .underline("00ff00")
 ///     .underline(("ff0000", UnderlineStyle::Dash));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:rPr")]
 pub struct CharacterProperty<'a> {
@@ -75,7 +75,7 @@ impl<'a> CharacterProperty<'a> {
     __setter!(vertical_alignment: Option<VerticalAlignment>);
 }
 
-#[derive(Debug, XmlRead, XmlWrite)]
+#[derive(Debug, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:rStyle")]
 pub struct CharacterStyleId<'a> {

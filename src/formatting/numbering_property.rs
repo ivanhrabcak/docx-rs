@@ -10,7 +10,7 @@ use crate::formatting::{IndentLevel, NumberingId};
 ///
 /// let prop = NumberingProperty::from((20, 40));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:numPr")]
 pub struct NumberingProperty {

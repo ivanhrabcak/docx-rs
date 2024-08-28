@@ -1,6 +1,6 @@
 use crate::__string_enum;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum BorderStyle {
     Single,

@@ -24,7 +24,7 @@ use crate::{
 ///     .push(BookmarkStart::default())
 ///     .push(BookmarkEnd::default());
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:p")]
 pub struct Paragraph<'a> {
@@ -87,7 +87,7 @@ impl<'a> Paragraph<'a> {
 }
 
 /// A set of elements that can be contained as the content of a paragraph.
-#[derive(Debug, From, XmlRead, XmlWrite)]
+#[derive(Debug, From, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum ParagraphContent<'a> {
     #[xml(tag = "w:r")]

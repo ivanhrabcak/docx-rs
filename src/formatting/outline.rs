@@ -10,7 +10,7 @@ use crate::__xml_test_suites;
 /// let outline = Outline::from(false);
 /// let outline = Outline::from(true);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:outline")]
 pub struct Outline {

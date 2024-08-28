@@ -16,7 +16,7 @@ use crate::{
 ///     .justification(JustificationVal::Start)
 ///     .numbering((10usize, 20usize));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:pPr")]
 pub struct ParagraphProperty<'a> {
@@ -41,7 +41,7 @@ impl<'a> ParagraphProperty<'a> {
     __setter!(numbering: Option<NumberingProperty>);
 }
 
-#[derive(Debug, XmlRead, XmlWrite)]
+#[derive(Debug, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:pStyle")]
 pub struct ParagraphStyleId<'a> {

@@ -10,7 +10,7 @@ use crate::__xml_test_suites;
 /// let i = Italics::from(false);
 /// let i = Italics::from(true);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:i")]
 pub struct Italics {

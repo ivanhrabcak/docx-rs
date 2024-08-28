@@ -9,7 +9,7 @@ use crate::__xml_test_suites;
 ///
 /// let lvl = IndentLevel::from(42usize);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:ilvl")]
 pub struct IndentLevel {

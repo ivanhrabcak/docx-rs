@@ -2,7 +2,7 @@ use strong_xml::{XmlRead, XmlWrite};
 
 use crate::__string_enum;
 
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:vertAlign")]
 pub struct VerticalAlignment {
@@ -10,7 +10,7 @@ pub struct VerticalAlignment {
     pub val: Option<VerticalAlignmentType>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum VerticalAlignmentType {
     Superscript,

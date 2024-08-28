@@ -4,7 +4,7 @@ use strong_xml::{XmlRead, XmlWrite};
 use crate::{__setter, __xml_test_suites};
 
 /// End of bookmark
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:bookmarkEnd")]
 pub struct BookmarkEnd<'a> {

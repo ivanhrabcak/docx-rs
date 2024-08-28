@@ -9,7 +9,7 @@ use crate::{__string_enum, __xml_test_suites};
 ///
 /// let br = Break::from(BreakType::Page);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:br")]
 pub struct Break {
@@ -27,7 +27,7 @@ impl<T: Into<Option<BreakType>>> From<T> for Break {
 /// Specifies the break type of a break
 ///
 /// The default value is TextWrapping.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum BreakType {
     /// Text restarts on the next column.

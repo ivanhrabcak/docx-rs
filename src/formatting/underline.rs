@@ -13,7 +13,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// let udl = Underline::from(("00ff00", UnderlineStyle::Dash));
 /// let udl = Underline::from((String::from("ff0000"), UnderlineStyle::DotDash));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:u")]
 pub struct Underline<'a> {
@@ -68,7 +68,7 @@ impl<'a> From<(&'a str, UnderlineStyle)> for Underline<'a> {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum UnderlineStyle {
     Dash,

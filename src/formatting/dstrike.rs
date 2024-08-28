@@ -10,7 +10,7 @@ use crate::__xml_test_suites;
 /// let dstrike = Dstrike::from(false);
 /// let dstrike = Dstrike::from(true);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:dstrike")]
 pub struct Dstrike {

@@ -6,7 +6,7 @@ use crate::{
 };
 
 /// Borders
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:pBdr")]
 pub struct Borders<'a> {

@@ -14,7 +14,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// let text = Text::from(String::from("text"));
 /// let text = Text::from(("text", TextSpace::Preserve));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:t")]
 pub struct Text<'a> {
@@ -65,7 +65,7 @@ impl<'a> From<(&'a str, TextSpace)> for Text<'a> {
 /// Text Space Rules
 ///
 /// Specifies how whitespace should be handled in a literal text.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum TextSpace {
     /// Default rules
