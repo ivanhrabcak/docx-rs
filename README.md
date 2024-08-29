@@ -3,7 +3,7 @@
 [![Document](https://docs.rs/docx/badge.svg)](https://docs.rs/docx)
 
 # docx
-
+My fork of the docx rust library that support subscript and superscript text, with more future fixes (support for page breaks).
 A Rust library for parsing and generating docx files.
 
 [Document](https://docs.rs/docx)
